@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="langWrap">
+            <a href="#" language="english" class="active">EN</a>
+            <a href="#" language="kazakh">KA3</a>
+            <a href="#" language="japanese">jap</a>
+        </div>
+        <div class="content">
+            <h2 class="title">Hello World</h2>
+            <p class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+                Why do we use it?
+                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                
+                
+                Where does it come from?
+                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+        </div>
+    </div>
+    <script>
+        const langEl = document.querySelector(".langWrap");
+        const link = document.querySelectorAll("a");
+        const title = document.querySelector(".title");
+        const descrEl = document.querySelector(".description");
+
+        link.forEach(el => {
+            el.addEventListener("click", () =>{
+                langEl.querySelector('.active').classList.remove('active');
+                    el.classList.add('active');  
+                    const attr = el.getAttribute('language');
+
+                    title.textContent = data[attr].title;
+                    descrEl.textContent = data[attr].description;
+            });
+        });
+
+        var data = {
+            english: 
+            {
+                title:"Hello World",
+                description:
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum Why do we use it? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like). Where does it come from? Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, " 
+            },
+            kazakh:
+            {
+                title:"бұл басып",
+                description:
+                
+                
+                "бұл басып шығару және теру өнеркәсібінің қарапайым мәтіні. Lorem Ipsum 1500 жылдардан бері беймәлім принтер типті галлереяны алып, үлгі кітабын жасау үшін оны шифрлаған кезден бастап саланың стандартты жалған мәтіні болды. Ол бес ғасыр бойы ғана емес, сонымен бірге электронды теруге секіруден де аман қалды, айтарлықтай өзгеріссіз қалды. Ол 1960 жылдары Lorem Ipsum үзінділері бар Letraset парақтарын шығарумен және жақында Aldus PageMaker сияқты жұмыс үстелі баспа бағдарламалық құралымен, соның ішінде Lorem Ipsum нұсқаларымен танымал болды.Біз оны не үшін пайдаланамыз? Оқырман беттің макетіне қараған кезде оның оқуға болатын мазмұнына алаңдайтыны бұрыннан белгілі. Lorem Ipsum пайдаланудың мәні мынада: «Мазмұн осында, мазмұн осында» пайдаланудан айырмашылығы, оның әріптердің азды-көпті қалыпты таралуы бар, бұл оны оқуға болатын ағылшын тіліне ұқсатады. Көптеген жұмыс үстелі баспа пакеттері мен веб-бет редакторлары қазір өздерінің әдепкі үлгі мәтіні ретінде Lorem Ipsum пайдаланады және «lorem ipsum» іздеу көптеген веб-сайттарды әлі бастапқы сатысында ашады. Әртүрлі нұсқалар жылдар бойы, кейде кездейсоқ, кейде әдейі (инъекциялық юмор және т.б.) дамыды.Ол қайдан шыққан? Танымал пікірге қарамастан, Лорем Ипсум жай ғана кездейсоқ мәтін емес. Оның тамыры біздің дәуірімізге дейінгі 45 жылдан бастап классикалық латын әдебиетінің бір бөлігінде жатыр, оның жасы 2000 жылдан асады. Вирджиниядағы Хэмпден-Сидней колледжінің латын тілінің профессоры Ричард МакКлинток Lorem Ipsum үзіндісіндегі түсініксіз латын сөздерінің бірі consectetur сөзін іздеп, классикалық әдебиеттегі сөздің дәйексөздерін аралап, күмәнсіз дереккөзді тапты. Лорем Ипсум біздің эрамызға дейінгі 45 жылы жазылған Цицеронның «de Finibus Bonorum et Malorum» (Жақсылық пен зұлымдықтың шектен шығуы) 1.10.32 және 1.10.33 бөлімдерінен алынған. Бұл кітап Қайта өрлеу дәуірінде өте танымал этика теориясына арналған трактат болып табылады. Lorem Ipsum бірінші жолы, «Lorem ipsum dolor sit amet..» 1.10.32 бөліміндегі жолдан келеді."
+            },
+            japanese:
+            {
+                title:"印刷お",
+                description:
+                "は、印刷および植字業界の単なるダミー テキストです。 Lorem Ipsum は、1500 年代に未知の印刷業者がタイプのギャレーを取り、それをスクランブルしてタイプ見本帳を作成して以来、業界の標準的なダミー テキストでした。それは 5 世紀だけでなく、電子植字への飛躍にも耐え、本質的に変わっていません。 1960 年代に Lorem Ipsum のパッセージを含む Letraset シートがリリースされ、最近では Lorem Ipsum のバージョンを含む Aldus PageMaker のようなデスクトップ パブリッシング ソフトウェアで普及しました。なぜそれを使用するのですか？ ページのレイアウトを見ているときに、ページの読みやすいコンテンツに読者が気を取られることは、長い間確立された事実です。 Lorem Ipsum を使用するポイントは、「ここにコンテンツ、ここにコンテンツ」を使用するのとは対照的に、文字が多かれ少なかれ正規分布しているため、読みやすい英語のように見えることです。現在、多くのデスクトップ パブリッシング パッケージや Web ページ エディターは Lorem Ipsum をデフォルトのモデル テキストとして使用しており、「lorem ipsum」を検索すると、まだ初期段階にある多くの Web サイトが見つかります。さまざまなバージョンが何年にもわたって進化してきましたが、偶然にも、意図的に (ユーモアを注入するなど) にもなりました。それはどこから来たのですか？ 一般に信じられていることとは反対に、Lorem Ipsum は単なるランダム テキストではありません。紀元前 45 年の古典ラテン文学にルーツがあり、2000 年以上前のものです。バージニア州ハンプデン・シドニー・カレッジのラテン語教授であるリチャード・マクリントックは、ロレム・イプサムのパッセージから、よりあいまいなラテン語の 1 つである consectetur を調べ、古典文学の単語の引用を調べて、疑いの余地のない情報源を発見しました。 Lorem Ipsum は、紀元前 45 年に書かれたキケロの \"de Finibus Bonorum et Malorum\" (善と悪の極限) のセクション 1.10.32 と 1.10.33 から来ています。この本は、ルネサンス期に非常に人気のあった倫理理論に関する論文です。 Lorem Ipsum の最初の行「Lorem ipsum dolor sit amet..」は、セクション 1.10.32 の行から来ています。"
+            }
+        }
+    </script>
+    
+</body>
+</html>
